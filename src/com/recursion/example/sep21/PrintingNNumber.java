@@ -1,20 +1,20 @@
 package com.recursion.example.sep21;
 
-public class Demo {
-    int i = 1;
+public class PrintingNNumber {
+    int i = 0;
 
     int function() {
-        if (i <= 5) {
+        if (i <= 8) {
             i++;
-            function();
 
             System.out.print(i+ " ");
+            function();
         }
         return 0;
     }
 
     public static void main(String[] args) {
-        Demo obj = new Demo();
+        PrintingNNumber obj = new PrintingNNumber();
         obj.function();
     }
 }
