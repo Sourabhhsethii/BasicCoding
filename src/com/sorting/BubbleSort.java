@@ -14,13 +14,14 @@ public class BubbleSort {
 
 
         for (int i=0;i<arr.length;i++){
-            // every time will reduce the length by i as last number will already sorted so no need to compare it.
+            // every time will reduce the length by
             for (int j=1;j< arr.length - i;j++){
                 // Swap Number if and only if adjacent elements are greater, it will provide in accending sorting order.
                 if(arr[j-1]>arr[j]){
                     temp = arr[j-1];
                     arr[j-1] = arr[j];
                     arr[j] = temp;
+                    System.out.println(Arrays.toString(arr) + "");
                 }
             }
 
@@ -37,12 +38,9 @@ public class BubbleSort {
 
         int[] num = new int[n];
         for (int i = 0; i < n; i++){
-            System.out.println("Enter Element " + (i+1) + " : ");
             num[i] = input.nextInt();
         }
-
-        System.out.println("Enter Number to search");
-        System.out.println(Arrays.toString(bubbleSort(num)));
+        bubbleSort(num);
 
     }
 }
