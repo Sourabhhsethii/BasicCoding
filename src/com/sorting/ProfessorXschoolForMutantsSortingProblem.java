@@ -48,6 +48,49 @@ public class ProfessorXschoolForMutantsSortingProblem {
             lastNames[i] = scanner.next().toLowerCase();
         }
 
-        //Write your code here
+        firstNames = insertionSortAsc(firstNames);
+        lastNames = insertionSortDsc(lastNames);
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(firstNames[i]);
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.println(lastNames[i]);
+        }
     }
+
+    public static String[] insertionSortAsc(String[] firstNames){
+
+        for (int i=0;i<firstNames.length;i++){
+            int j = i;
+            String value = firstNames[i];
+            // firstNames will get compared for asc.
+            while (j>=1 && firstNames[j-1].compareTo(value)>0){
+                firstNames[j] = firstNames[j-1];
+                j--;
+            }
+            firstNames[j] = value;
+        }
+
+        return firstNames;
+
+    }
+
+    public static String[] insertionSortDsc(String[] lastname){
+
+        for (int i=0;i<lastname.length;i++){
+            int j = i;
+            String value = lastname[i];
+            // value will get compared for dec.
+            while (j>=1 && value.compareToIgnoreCase(lastname[j-1])>0){
+                lastname[j] = lastname[j-1];
+                j--;
+            }
+            lastname[j] = value;
+        }
+
+        return lastname;
+
+    }
+
 }
