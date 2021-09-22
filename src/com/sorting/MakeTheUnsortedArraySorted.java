@@ -9,6 +9,13 @@ import java.util.Scanner;
  * You will be given two arrays of integers, array1 and array2. The array1 will be almost sorted in ascending order with just one element in the wrong position making the array unsorted. You need to find a maximum
  * possible element from the array2 which makes the array1 sorted after replacing the wrongly positioned element of the array1 with this element.
  *
+10
+
+ 2 2 7 7 8 8 6 6 13 13
+
+ 4
+
+ 15 11 9 5
  * Note:
  *
  * The wrongly placed element in the array1 will not be at the 0th index of the array or at the (n-1)th index of the array.
@@ -120,11 +127,20 @@ public class MakeTheUnsortedArraySorted {
                 if(arr[i]>arr[j]){
                     minNumber = arr[i];
                     mismatch = arr[j];
-                    maxfumber = arr[j+1];
+                    if(mismatch == arr[j+1]){
+
+                        maxfumber = arr[j+2];
+                    } else {
+                        maxfumber = arr[j+1];
+                    }
                     break;
                 }
             }
         }
+
+/*        System.out.println(" minNumber " + minNumber);
+        System.out.println(" mismatch " + mismatch);
+        System.out.println(" maxfumber " + maxfumber);*/
 
         for (int i=0;i<arr2.length-1;i++){
             if(arr2[i]>minNumber && arr2[i]<maxfumber){
