@@ -21,6 +21,7 @@ public class InsertionSort {
 
     public static void insertionSort(int[] arr){
         int temp =0;
+        int count = 0;
         // iteration from second element in an array till last
         for (int i=1;i<arr.length;i++){ // Correct
             // Move towards left of selected i element
@@ -29,7 +30,6 @@ public class InsertionSort {
             int j=i;
 
             while (j>=1 && arr[j-1]>v){
-
                 arr[j] = arr[j-1];
                 j--;
 
@@ -37,6 +37,7 @@ public class InsertionSort {
             arr[j]=v;
 
         }
+        System.out.println( "Count:  " +count);
         System.out.println(Arrays.toString(arr));
 
     }
