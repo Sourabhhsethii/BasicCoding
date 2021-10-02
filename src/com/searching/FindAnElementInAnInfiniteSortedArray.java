@@ -108,6 +108,19 @@ public class FindAnElementInAnInfiniteSortedArray {
         return binarySearch(arr, low, high, key);
     }
 
+    static int infiniteArrayAnotherApproach(int arr[], int key)
+    {
+        int low = 0;
+        int high =1;
+        int val = arr[low];
+        while (val<key) {
+            low = high;
+            high = 2*high;
+            val = arr[high];
+        }
+        return binarySearch(arr, low, high, key);
+    }
+
 
     public static void main(String args[])
     {
