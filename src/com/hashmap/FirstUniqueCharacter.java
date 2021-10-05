@@ -41,11 +41,17 @@ public class FirstUniqueCharacter {
             }
         }
 
+        int found = 0;
         for(int i=0;i<str.length();i++) {
             if(hash.get(str.charAt(i)) == 1){
                 System.out.println(str.charAt(i));
+                found =1;
                 break;
             }
+        }
+
+        if(found == 0){
+            System.out.println(-1);
         }
 
         System.out.println(hash);
