@@ -1,28 +1,47 @@
+package com.assingments.stackqueue;
+
 import java.util.Stack;
 import java.util.Scanner;
 
 public class PartA {
 
-   /* private static Stack<String> history = new Stack<String>();
+    private static Stack<String> history = new Stack<String>();
 
     public static Boolean isBrowsingHistoryEmpty() {
-        // Add CODE BELOW
+       if(history.isEmpty()){
+           return true;
+       } else {
+           return false;
+       }
     }
 
     public static String mostRecentlyVisitedSite() {
-        // Add CODE BELOW
+        return history.peek();
     }
 
     public static void addSiteToHistory(String url) {
-        // Add CODE BELOW
+        history.add(url);
     }
 
     public static void goBackInTime(int n) {
-        // Add CODE BELOW
+        if(!isBrowsingHistoryEmpty()){
+
+            while (n>0){
+                history.pop();
+                n--;
+            }
+        }
     }
 
     public static void printBrowsingHistory() {
-        // Add CODE BELOW
+        if(isBrowsingHistoryEmpty()){
+            System.out.println("Browsing history is empty");
+        } else {
+            while (isBrowsingHistoryEmpty() != true){
+                System.out.println(history);
+                break;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -38,7 +57,7 @@ public class PartA {
         System.out.println(mostRecentlyVisitedSite()); // Fetching most recently visited site (UpGrad Learn Platform)
         printBrowsingHistory(); // Printing browsing history
 
-    } */
+    }
 
 }
 
