@@ -3,7 +3,7 @@ package com.assingments.stackqueue;
 import java.util.Stack;
 import java.util.Scanner;
 
-public class PartA {
+public class SolutionA {
 
     private static Stack<String> history = new Stack<String>();
 

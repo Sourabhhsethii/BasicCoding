@@ -55,7 +55,7 @@ class SiteStats {
 
 }
 
-public class PartB {
+public class SolutionB {
 
     private static Queue<SiteStats> sites = new LinkedList<SiteStats>();
 
