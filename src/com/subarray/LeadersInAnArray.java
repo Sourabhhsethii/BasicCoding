@@ -1,5 +1,8 @@
 package com.subarray;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * Leaders in an array
  * Problem Description
@@ -34,7 +37,10 @@ package com.subarray;
  * Input 2:
  *
  *  A = [1, 2]
- *
+
+ 6
+ 16 17 4 3 5 2
+
  * Example Output
  * Output 1:
  *
@@ -55,11 +61,34 @@ package com.subarray;
  *  Only 2 the rightmost element is the leader in the array.
  */
 public class LeadersInAnArray {
-    public int[] solve(int[] A) {
-        return A;
+    public static ArrayList<Integer> solve(ArrayList<Integer> A) {
+        ArrayList<Integer> leaderInArray = new ArrayList<>();
+
+        for (int i=0;i<A.size();i++){
+            int leaderSelection = A.get(i);
+            int rightMax = 0;
+            for(int j=i+1;j<A.size();j++){
+                if(rightMax<A.get(j)){
+                    rightMax = A.get(j);
+                }
+            }
+            if(leaderSelection > rightMax){
+                leaderInArray.add(leaderSelection);
+            }
+        }
+        return leaderInArray;
     }
 
     public static void main(String[] args) {
+        int n;
+        System.out.println("Enter Number of elements of array");
+        Scanner input = new Scanner(System.in);
+        n = input.nextInt();
 
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < n; i++){
+            arrayList.add(input.nextInt());
+        }
+        System.out.println(solve(arrayList));
     }
 }
