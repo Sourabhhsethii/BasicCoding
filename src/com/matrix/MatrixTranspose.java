@@ -63,7 +63,6 @@ public class MatrixTranspose {
                 result[j][i] = A[i][j];
             }
         }
-
         return result;
     }
 
