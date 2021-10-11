@@ -1,7 +1,5 @@
 package com.binarytree;
 
-import java.util.Arrays;
-
 // class representing a node (element) in a tree
 class Node {
     int data; // value contained inside a node
