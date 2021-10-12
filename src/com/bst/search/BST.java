@@ -68,9 +68,30 @@ class Tree {
         }
     }
 
+    Node insert(Node node, int key){
+        if(node == null){
+            node = new Node(key);
+            return node;
+        }
+        if(key < node.data) {
+            node.left = insert(node.left, key);
+        }  else if(key > node.data) {
+            node.right = insert(node.right, key);
+        }
+        return node;
+    }
 
-}
-public class BST {
+    void printInorderBST(Node node){
+
+        if(node == null){
+            return;
+        }
+        printInorderBST(node.left);
+        System.out.print(node.data+" ");
+        printInorderBST(node.right);
+
+    }
+
     // Method to search for a node with given key in a BST
     boolean search(Node node, int key) {
         if (node == null)
@@ -83,5 +104,19 @@ public class BST {
             return search(node.left, key);
         else
             return search(node.right, key);
+    }
+}
+public class BST {
+
+    public static void main(String[] args) {
+        Tree bst = new Tree();
+        bst.root = new Node(4);
+        bst.root.right =  new Node(2);
+        bst.root.left = new Node(6);
+
+        bst.printInorderBST(bst.root);
+        bst.insert(bst.root,3);
+        System.out.println("  ");
+        bst.printInorderBST(bst.root);
     }
 }
