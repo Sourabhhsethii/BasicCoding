@@ -1,5 +1,11 @@
-package com.binarytree.bfs;
+package com.binarytree.bfsQueue;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * Approach  to traverse the elements of a tree using BFS (level-order traversal) in iterative way using queue
+ */
 class Node {
     int data;
     Node left, right;
@@ -9,7 +15,6 @@ class Node {
         left = right = null;
     }
 }
-
 class Tree {
     Node root;
 
@@ -42,40 +47,32 @@ class Tree {
         }
     }
 
-    // Method to traverse the elements of a tree using BFS (level-order traversal) in recursive way
+    // Method to traverse the elements of a tree using BFS (level-order traversal) in iterative way using queue
     void levelOrderOrBFS() {
-        int h = height(root);
-        for (int i = 1; i <= h; i++)
-            printNodesAtLevel(root, i, 1);
-    }
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
 
-    int height(Node root) {
-        if (root == null)
-            return 0;
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
+        while (!queue.isEmpty()) {
+            Node temp = queue.peek();
+            queue.remove();
+            System.out.print(temp.data + " ");
 
-        if (leftHeight > rightHeight)
-            return leftHeight + 1;
-        else
-            return rightHeight + 1;
-    }
+            // enqueue left child into queue
+            if (temp.left != null)
+                queue.add(temp.left);
 
-    // Method to print nodes at the given level
-    void printNodesAtLevel (Node root, int level, int currentLevel) {
-        if (root == null)
-            return;
-        if (level == currentLevel)
-            System.out.print(root.data + " ");
-        else {
-            printNodesAtLevel(root.left, level, currentLevel + 1);
-            printNodesAtLevel(root.right, level, currentLevel + 1);
+            // enqueue right child into queue
+            if (temp.right != null)
+                queue.add(temp.right);
         }
     }
+
 
 }
 
 public class BFS {
+
+
     // Method to calculate height of a tree
     public static void main(String[] args) {
         Tree tr = new Tree();
