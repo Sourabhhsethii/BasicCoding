@@ -19,7 +19,6 @@ import java.util.Scanner;
  * This is because out of the elements [7 8 9 4 9], 9 is the only one which occurs the maximum no. of times (twice)
  *
  *
- *
  * Sample input 2:
  * 0
  *
