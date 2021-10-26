@@ -207,16 +207,12 @@ public class CheckWhetherAnUndirectedGraphIsATreeOrNot {
         {
             i = it.next();
 
-            // If an adjacent is not visited, then recur for
-            // that adjacent
             if (!visited[i])
             {
                 if (isCyclic(i, visited, v))
                     return true;
             }
 
-            // If an adjacent is visited and not parent of
-            // current vertex, then there is a cycle.
             else if (i != parent)
                 return true;
         }
@@ -224,21 +220,13 @@ public class CheckWhetherAnUndirectedGraphIsATreeOrNot {
     }
 
     public boolean isTree() {
-        // Mark all the vertices as not visited and not part
-        // of recursion stack
         boolean visited[] = new boolean[vertexCount];
         for (int i = 0; i <vertexCount; i++)
             visited[i] = false;
 
-        // The call to isCyclicUtil serves multiple purposes
-        // It returns true if graph reachable from vertex 0
-        // is cyclcic. It also marks all vertices reachable
-        // from 0.
         if (isCyclic(0, visited, -1))
             return false;
 
-        // If we find a vertex which is not reachable from 0
-        // (not marked by isCyclicUtil(), then we return false
         for (int u = 0; u < vertexCount; u++)
             if (!visited[u])
                 return false;
