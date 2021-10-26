@@ -44,7 +44,7 @@ import java.util.Scanner;
  * Yes, the program would know the length of the array if the array elements are hard coded. However, this problem attempts to simulate a big data scenario -- a scenario where the number of elements in the array is so big that it won't fit in memory all at once. Therefore, since the Array won't fit in memory, it would be difficult for us to figure out exactly the length of the array.
  * For some real-world motivation to the big data and array is too big to fit in memory scenario, please read about the "Streaming" feature that has been incorporated into Java8
  *
- * For example, imagine that you work at google and you are probably collecting billion of data points about your users and customers per hour and since we haven't taught students about large datasets and streaming, we can't really use those concepts in the assignment. Therefore, we want to students to *pretend* that the array is so big that it won't fit in memory and, therefore, there is no way to find the length of the array.
+ * For example, imagine that you work at google and you are probably collecting billion of data points about your users and customers per hour and since we haven't taught students about large datasets and streaming, we can't really use those concepts in the com.assignment. Therefore, we want to students to *pretend* that the array is so big that it won't fit in memory and, therefore, there is no way to find the length of the array.
  *
  */
 public class FintElementInArrayProblem2 {
