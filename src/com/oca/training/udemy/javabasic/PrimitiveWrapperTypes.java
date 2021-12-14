@@ -37,6 +37,11 @@ public class PrimitiveWrapperTypes {
 
         printSum(1,5); // Auto Boxing
         printSum(myInterger1,myInterger2); // Not Autoboxing
+
+        short myPets = 6;
+        // double in initilized to int; int myNumber = 5.6;
+        String theSTring = "Scruffy";
+        theSTring.length();
     }
 
     private static void printSum(Integer first, Integer second){
