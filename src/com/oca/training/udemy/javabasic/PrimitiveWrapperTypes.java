@@ -9,6 +9,15 @@ public class PrimitiveWrapperTypes {
         Integer myInterger3 = Integer.valueOf(20);
         Integer myInterger4 = Integer.parseInt("10");
 
+        int A$B;
+        int _hello;
+        int False;
+       // Error - int false;
+       // Error - int java.util;
+        int Public;
+        // Error - int 19_abc;
+        // Error - int 2ACX;
+
         Integer myInterger5 = null;
         // int myInt2 = null; // cant possible
 
