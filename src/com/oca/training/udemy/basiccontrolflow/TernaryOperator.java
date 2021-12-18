@@ -1,4 +1,4 @@
-package com.oca.training.udemy.udemybasiccontrolflw;
+package com.oca.training.udemy.basiccontrolflow;
 
 public class TernaryOperator {
 
