@@ -19,5 +19,9 @@ public class TernaryOperator {
         y = (x>5)? (2 * x) : (4 *x); // nicer to read
 
         System.out.println("y= " + y);
+
+        // Not Same Datatype
+        System.out.println(y > 5 ? 10 : "test");
+      //  int myInt = y > 5 ? 10 : "test"; // this will not compile.
     }
 }
