@@ -41,5 +41,11 @@ public class StringBuilderExample {
         System.out.println("size= " + myBuilder.length());
         System.out.println("capcity= " +myBuilder.capacity());
 
+        StringBuilder a = new StringBuilder("This ");
+        StringBuilder b = a.append("Java ");
+        b =  b.append("is").append(" so ").append("cool");
+        System.out.println(a);
+        System.out.println(b);
+
     }
 }
