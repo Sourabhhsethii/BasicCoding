@@ -1,4 +1,4 @@
-package com.oca.training.udemy.array;
+package com.oca.training.udemy.arraylist;
 
 import java.util.ArrayList;
 import java.util.List;
