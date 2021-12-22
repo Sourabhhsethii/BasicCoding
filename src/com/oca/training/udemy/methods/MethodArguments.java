@@ -26,4 +26,9 @@ public class MethodArguments {
 
     }
 
+    // void test {} // does not compile no brackets
+
+    // void test(int a, int b){} // does not comile
+    // void test2(int a, int b); // missing method body, doesn not compile
+
 }
