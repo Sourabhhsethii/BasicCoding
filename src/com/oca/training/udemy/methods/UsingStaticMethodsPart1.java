@@ -29,5 +29,7 @@ public class UsingStaticMethodsPart1 {
         System.out.println(another.count);
         System.out.println(us.count);
 
+
+
     }
 }
