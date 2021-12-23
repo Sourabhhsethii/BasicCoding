@@ -23,13 +23,42 @@ class Example{
     }
 }
 
+class Demo {
+
+    static {
+        add(2);
+    }
+    static void  add(int number){
+        System.out.print(number + "  ");
+    }
+    Demo(){
+        add(5);
+    }
+    static {
+        add(4);
+    }
+
+    static {
+        add(6);
+    }
+
+    static {
+        new Demo();
+    }
+
+    {
+        add(8);
+    }
+}
+
 public class OrderOfInialization {
 
 
 
     public static void main(String[] args) {
 
-        Example ex = new Example();
+      //  Example ex = new Example();
+        new Demo();
 
     }
 }
