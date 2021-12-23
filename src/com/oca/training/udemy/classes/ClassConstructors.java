@@ -3,9 +3,13 @@ package com.oca.training.udemy.classes;
 class Dog {
     private  String color;
 
-    public Dog(){
+    /**
+     * Constructors can have differnt access modifiers like, public, protected, private.
+     */
+    protected Dog(){
 
     }
+
     public Dog(String color){
         System.out.println("Hello Dog Constructors Called!!!");
         this.color = color;
