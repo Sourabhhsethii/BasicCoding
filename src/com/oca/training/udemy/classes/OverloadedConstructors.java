@@ -15,18 +15,21 @@ class DogClass{
       //  new DogClass(name,  "husky");  // complies but does not do what we want
       //   this.name = name; // this() -> need to first in the constructors body.
         this(name,"husky"); // Constructor Channing
+        System.out.println("Constructor 1");
     }
 
     public DogClass(String name, String breed){
     /*    this.name = name;
         this.breed = breed;*/
         this(name,breed,30.0);  // Constructor Channing
+        System.out.println("Constructor 2");
     }
 
     public DogClass(String name, String breed, double weight){
         this.name = name;
         this.breed = breed;
         this.weight = weight;
+        System.out.println("Constructor 3");
     }
 
     public  void print(){
