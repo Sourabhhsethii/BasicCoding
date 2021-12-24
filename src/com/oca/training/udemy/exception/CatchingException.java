@@ -22,6 +22,30 @@ public class CatchingException {
             System.out.println("closed");
         }
 
+        System.out.println(calculate());
+
+    }
+
+    public static String calculate(){
+        String result = "";
+        String str = null;
+
+        try{
+            try{
+                result += "start ";
+                str.length();
+            } catch (NullPointerException e){
+                result += " npe";
+                throw new RuntimeException();
+            } finally {
+                result += "finally";
+                throw new Exception();
+            }
+        }catch (Exception e){
+            result += " finished";
+        }
+
+        return result;
     }
 
     public static void visitMusem() {
