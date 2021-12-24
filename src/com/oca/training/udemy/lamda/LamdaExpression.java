@@ -2,6 +2,7 @@ package com.oca.training.udemy.lamda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class LamdaExpression {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class LamdaExpression {
         animals.add(new Animal("rabiit", true,false));
         animals.add(new Animal("dog", true, true));
 
+       //  print(animals, new CheckcanJump()); // while using pridicate - it can give errors.
        // print(animals,animal -> animal.canJump());
        // print(animals, (Animal animal) -> !animal.canSwim() );
 
@@ -27,11 +29,25 @@ public class LamdaExpression {
         print(fish,rabbit,((first, second) ->  first.canJump() && second.canJump()));
         print(fish,dog,((first, second) ->  first.canSwim() && second.canSwim()));
 
+        List<String> name =  new ArrayList<>();
+        name.add("John");
+        name.add("Anthony");
+        name.add("Jimmy");
+        name.add("Timmy");
+
+        System.out.println("name= " + name);
+
+       //  name.removeIf(str -> str.charAt(0) == 'J');
+        name.removeIf((String str) ->{
+            return str.charAt(0) == 'J';
+        });
+        System.out.println("afte filter name= " +  name);
+
     }
 
-    private static void print(List<Animal> animals, CheckAnimal filter){
+    private static void print(List<Animal> animals, Predicate<Animal> filter){
         for (Animal animal: animals){
-            if(filter.check(animal)){
+            if(filter.test(animal)){
                 System.out.println("Animal : - " + animal.getType());
             }
         }
@@ -66,6 +82,9 @@ class Animal {
     }
 }
 
+/**
+ * Functional Interface with ony one method inside it.
+ */
 interface CheckAnimal{
     boolean check(Animal animal);
 
