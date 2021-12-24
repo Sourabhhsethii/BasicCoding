@@ -6,7 +6,7 @@ public class UsingFinallyBlock {
         try {
 
           String[] array = new String[5];
-        //  array[0] = "Jphn";
+        //  array[0] = "John";
 
            String element = firstToUppercase(array);
             System.out.println("elements= " + element);
