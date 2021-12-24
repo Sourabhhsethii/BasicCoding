@@ -12,13 +12,13 @@ public class DataEncapsulation {
 
 
 
-    /*        company.name = "MYCompany";
+    /*  company.name = "MYCompany";
         company.employees.add("John");
         company.employees.add("Anthony");*/
 
         company.printSorted();
 
-      /*  company.name = null;
+        /*  company.name = null;
         company.printSorted();*/
 
     /*    company.employees = null;*/
