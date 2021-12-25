@@ -5,6 +5,9 @@ public class Animal {
     private int age;
     private String name;
 
+    public Animal(){
+
+    }
 
     public Animal( int age){
         System.out.println("Animal");
@@ -26,6 +29,14 @@ public class Animal {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void eat(){
+        System.out.println("Animal is eating");
+    }
+
+    public double getAverageWeight(){
+        return 10.0;
     }
 
     public void printDetails(){

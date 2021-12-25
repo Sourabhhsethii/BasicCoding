@@ -16,5 +16,11 @@ public class MainInhertitance {
         dog.setName("Rex");
         dog.printDetails();
 
+        System.out.println("-------------");
+
+        husky.eat();
+
+        System.out.println("avg = " + husky.getAverageWeight());
+
     }
 }
