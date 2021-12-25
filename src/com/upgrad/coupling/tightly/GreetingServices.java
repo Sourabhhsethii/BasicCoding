@@ -1,4 +1,4 @@
-package com.upgrad.coupling;
+package com.upgrad.coupling.tightly;
 
 /**
  *  Greeting Service
