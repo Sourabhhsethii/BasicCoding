@@ -18,7 +18,7 @@ public  class ClassesMain {
         DateTimeFormatter f = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT);
         System.out.println(d.format(f));*/
         LocalDateTime d = LocalDateTime.of(2017,5,10,11,22,33);
-        Period p = Period.ofDays(1).ofYears(2);
+        Period p = Period.ofDays(1).ofYears(2).ofMonths(2);
         d = d.minus(p);
         DateTimeFormatter f = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
         System.out.println(d.format(f));
