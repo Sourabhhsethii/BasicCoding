@@ -4,9 +4,23 @@ import java.util.*;
 
 public class CollectionDemo {
     public static void main(String[] args) {
+        System.out.println(" Collections ");
         show();
-        System.out.println(" Test ");
+        System.out.println(" List ");
         showListDemo();
+        System.out.println(" Compare able Interface ");
+        List<Customer> customers = new ArrayList<>();
+        customers.add(new Customer("a", "e3"));
+        customers.add(new Customer("c", "e2"));
+        customers.add(new Customer("b", "e1"));
+        Collections.sort(customers);
+        System.out.println(customers);
+        System.out.println("Comparator  Interface ");
+
+        System.out.println("Queue");
+        showListQueue();
+        System.out.println("Set");
+        showListSet();
     }
 
     public static void show(){
@@ -46,6 +60,29 @@ public class CollectionDemo {
         list.remove(0);
         Collections.addAll(list,"a", "b", "c");
         System.out.println(list.get(0));
+    }
+
+    public static void showListQueue() {
+        Queue<String> queue = new ArrayDeque<>();
+        queue.add("c");
+        queue.add("a");
+        queue.add("b");
+        var front = queue.peek();
+        System.out.println(front);
+        var remove = queue.remove();
+        System.out.println(remove);
+        System.out.println(queue);
+    }
+
+    // No Duplicates Only Unique Values & No Orders.
+    public static void showListSet() {
+        Set<String> set = new HashSet<>();
+        set.add("sky");
+        set.add("Blue");
+        set.add("Blue");
+        set.add("is");
+        set.add("is");
+        System.out.println(set);
     }
 
 }
