@@ -39,27 +39,27 @@ public class MinCost {
         System.out.println("Approach 2--> " + approach2(list));
     }
 
-    // T.C -> O(n) but with observation applying formula.
+    // T.C -> O(nlogn) but with observation applying formula.
     public static int approach1(ArrayList<Integer> list){
         int cost = 0;
 
-        list.sort((a,b)->  b-a);
-        for (int i=0;i<list.size();i++){
+        list.sort((a,b)->  b-a); // logn *
+        for (int i=0;i<list.size();i++){ // n
             cost += list.get(i) * (i+1);
         }
         return cost;
     }
 
-    // T.C -> O(n) but two loops
+    // T.C -> O(nlogn) but two loops
     public static int approach2(ArrayList<Integer> list){
 
-        list.sort((a,b)->  b-a);
+        list.sort((a,b)->  b-a);// logn *
         int sum = 0;
-        for (int x: list){
+        for (int x: list){ // n +
             sum += x;
         }
         int ans = 0;
-        for (int i=0;i<list.size();i++){
+        for (int i=0;i<list.size();i++){ // n
             ans += sum;
             sum -= list.get(i);
         }
