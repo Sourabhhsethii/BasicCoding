@@ -6,6 +6,10 @@ import java.util.Scanner;
 /**
 
  4 - > 1 10 5 7
+
+ 4
+ 1 10 5 7
+
  */
 public class MinimumDiffernence {
     public static void main(String[] args) {
@@ -20,7 +24,7 @@ public class MinimumDiffernence {
         }
 
         System.out.println("Approach 1--> " + approach1(list));
-        // System.out.println("Approach 2--> " + approach2(list));
+         System.out.println("Approach 2--> " + approach2(list));
     }
 
     // O(N^2)
@@ -34,6 +38,17 @@ public class MinimumDiffernence {
 
         return ans;
     }
+
+    //SORT First // T.C O(nlogn)
+    public static int approach2(ArrayList<Integer> list){
+        int ans = Integer.MAX_VALUE;
+        list.sort((a,b)->  b-a);
+        for(int i=1;i<list.size()-1;i++){
+            ans = min(ans,Math.abs(list.get(i)-list.get(i-1)));
+        }
+        return ans;
+    }
+
 
     public static int min(int a, int b){
         if(a<b){
