@@ -1,13 +1,11 @@
 package com.thread.mosh;
 
-import com.thread.mosh.concurreny.DownloadStatus;
-
 public class ThreadDemo {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.currentThread().getName());
 
 
-        Thread thread = new Thread(new DownloadFileTask(new DownloadStatus()));
+        Thread thread = new Thread(new DownloadFileTask());
         thread.start();
 
         try {

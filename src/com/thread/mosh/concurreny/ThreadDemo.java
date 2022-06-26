@@ -11,10 +11,13 @@ import java.util.List;
 public class ThreadDemo {
 
     public static void main(String[] args) {
-        var status = new DownloadStatus();
         List<Thread> threads = new ArrayList<>();
+        List<DownloadFileTask> tasks = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-                var thread = new Thread(new DownloadFileTask(status));
+
+                var task = new DownloadFileTask();
+                tasks.add(task);
+                var thread = new Thread(task);
                 thread.start();
                 threads.add(thread);
         }
@@ -25,7 +28,9 @@ public class ThreadDemo {
                 e.printStackTrace();
             }
         }
-
-        System.out.println(status.getTolalByte());
+       var totalByte =  tasks.stream()
+                .map(t-> t.getStatus().getTolalByte())
+                .reduce(Integer::sum);
+        System.out.println(totalByte);
     }
 }
