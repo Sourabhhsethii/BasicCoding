@@ -1,4 +1,4 @@
-package com.thread.mosh;
+package com.thread.mosh.basic;
 
 public class Main {
 

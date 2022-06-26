@@ -1,4 +1,4 @@
-package com.thread.mosh;
+package com.thread.mosh.basic;
 
 public class ThreadDemo {
     public static void main(String[] args) throws InterruptedException {

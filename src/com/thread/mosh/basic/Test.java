@@ -1,4 +1,4 @@
-package com.thread;
+package com.thread.mosh.basic;
 
 /**
  * Error while executing same critcal section by different threads.

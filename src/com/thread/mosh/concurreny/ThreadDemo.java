@@ -1,6 +1,6 @@
 package com.thread.mosh.concurreny;
 
-import com.thread.mosh.DownloadFileTask;
+import com.thread.mosh.basic.DownloadFileTask;
 
 import java.util.ArrayList;
 import java.util.List;
