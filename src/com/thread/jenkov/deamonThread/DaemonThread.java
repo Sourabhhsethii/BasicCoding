@@ -1,4 +1,4 @@
-package com.thread.mosh.deamonThread;
+package com.thread.jenkov.deamonThread;
 
 public class DaemonThread {
 

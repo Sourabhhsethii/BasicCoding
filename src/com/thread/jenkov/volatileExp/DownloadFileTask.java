@@ -1,4 +1,4 @@
-package com.thread.mosh.volatileExp;
+package com.thread.jenkov.volatileExp;
 
 import com.thread.mosh.concurreny.DownloadStatus;
 

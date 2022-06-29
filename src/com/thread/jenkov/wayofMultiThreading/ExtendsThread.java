@@ -1,4 +1,4 @@
-package com.thread.mosh.wayofMultiThreading;
+package com.thread.jenkov.wayofMultiThreading;
 
 public class ExtendsThread {
 

@@ -1,4 +1,4 @@
-package com.thread.mosh.threadSleep;
+package com.thread.jenkov.threadSleep;
 
 public class ThreadSleep {
 
