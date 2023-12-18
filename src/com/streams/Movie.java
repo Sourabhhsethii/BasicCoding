@@ -3,10 +3,14 @@ package com.streams;
 public class Movie {
     private String title;
     private int likes;
+    private Genre genre;
 
-    public Movie(String title, int likes) {
+
+
+    public Movie(String title, int likes, Genre genre) {
         this.title = title;
         this.likes = likes;
+        this.genre = genre;
     }
 
     public String getTitle() {
@@ -23,5 +27,9 @@ public class Movie {
                 "title='" + title + '\'' +
                 ", likes=" + likes +
                 '}';
+    }
+
+    public Genre getGenre() {
+        return genre;
     }
 }

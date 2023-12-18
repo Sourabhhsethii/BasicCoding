@@ -3,14 +3,15 @@ package com.streams;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        List<Movie> movies = List.of(new Movie("a",10), new Movie("n",10),new Movie("a",5),new Movie("a",50));
+        List<Movie> movies = List.of(new Movie("a",10, Genre.THRILLER),
+                new Movie("n",10, Genre.ACTION),
+                new Movie("a",5, Genre.COMEDY),
+                new Movie("a",50, Genre.COMEDY));
 
         /**
          * Imperative Programming ?? How something should me done????
@@ -120,7 +121,7 @@ public class Main {
         System.out.println(result4);
 
         /**
-         * Genral Purpose reducer
+         * General Purpose reducer
          */
         var result5 = movies.stream().map(Movie::getLikes)
                 .reduce((a,b)-> a+b);
@@ -153,7 +154,28 @@ public class Main {
                 .collect(Collectors.summarizingInt(Movie::getLikes));
         System.out.println(result10);
         /**
-         *
+         * Grouping Elements
          */
+        var result11 = movies.stream().collect(Collectors.groupingBy(Movie::getGenre));
+        System.out.println(result11);
+
+        /**
+         * Partition the data
+         */
+
+        var result12 =  movies.stream()
+                .collect(Collectors.partitioningBy(
+                        m-> m.getLikes()>20,
+                        Collectors.mapping(Movie::getTitle,Collectors.joining(","))
+                ));
+        System.out.println(result12);
+
+        /**
+         * Primitive Streams!!!
+         */
+        IntStream.rangeClosed(1,5).forEach(System.out::println);
+        IntStream.range(1,5).forEach(System.out::println);
+
+        LongStream.rangeClosed(1,5).forEach(System.out::println);
     }
 }
