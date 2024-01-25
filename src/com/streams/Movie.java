@@ -13,6 +13,10 @@ public class Movie {
         this.genre = genre;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -29,7 +33,16 @@ public class Movie {
                 '}';
     }
 
+    public Movie(Movie movie){
+        this.title = movie.title;
+        this.genre = movie.genre;
+        this.likes = movie.likes;
+    }
+
     public Genre getGenre() {
         return genre;
+    }
+    public Movie clone(){
+        return new Movie(this);
     }
 }
