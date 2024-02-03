@@ -12,6 +12,10 @@ public class SearchInARowWiseAndColumnWiseSortedMatrix {
         int[][] c = {{1, 2},
                 {3, 3}};
 
+        int[][] d = {{2,8,8,8},
+                    {2,8,8,8},
+                    {2,8,8,8}};
+
         System.out.println(solve(c,3));
     }
 
@@ -28,22 +32,27 @@ public class SearchInARowWiseAndColumnWiseSortedMatrix {
 
         int i = 0, j = m-1;
         int result = -1;
+        int min = Integer.MAX_VALUE;
         while( i<n && j>=0){
 
             if(A[i][j] == B) {
                 result = (((i+1)*1009) + (j+1));
-
+                if(min>result){
+                    min = result;
+                }
             }
 
-            if(A[i][j]>B) {
+            if(A[i][j]>=B) {
                 j--;
-            } else {
+            } else if(A[i][j]<B)  {
                 i++;
             }
 
         }
-        return result;
-
+        if(min == Integer.MAX_VALUE){
+            min = -1;
+        }
+        return min;
 
     }
 }
