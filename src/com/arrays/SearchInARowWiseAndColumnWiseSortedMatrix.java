@@ -53,7 +53,6 @@ public class SearchInARowWiseAndColumnWiseSortedMatrix {
             min = -1;
         }
         return min;
-
     }
 }
 
