@@ -7,13 +7,13 @@ import java.util.concurrent.Executors;
 public class Main {
     public static void main(String[] args) {
 
-        var executor = Executors.newFixedThreadPool(20000);
+        var executor = Executors.newFixedThreadPool(20);
 
-        for (int i = 0; i < 20000; i++) {
+        for (int i = 0; i <= 20; i++) {
             executor.execute(new NumberPrinter(i));
 
-            if(i == 40){
-                System.out.println("Debug all threads");
+            if(i == 20){
+                System.out.println("Debug all threads " + Thread.currentThread().getName());
             }
         }
         executor.shutdown();
