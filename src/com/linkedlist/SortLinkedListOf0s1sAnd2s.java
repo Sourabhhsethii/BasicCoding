@@ -1,7 +1,9 @@
+/*
 package com.linkedlist;
 
 import java.util.Scanner;
 
+*/
 /**
  * You are given a linked list consisting of just 0s, 1s and 2s. You need to return the sorted linked list.
 
@@ -38,7 +40,8 @@ import java.util.Scanner;
  * Output:
  *
  * 0 0 0 1 1 2 2 2
- */
+ *//*
+
 public class SortLinkedListOf0s1sAnd2s {
 
     public static void main(String[] args) {
@@ -46,7 +49,7 @@ public class SortLinkedListOf0s1sAnd2s {
         int n;
         Scanner s = new Scanner(System.in);
         n = s.nextInt();
-        LinkedList li = new LinkedList();
+        LinkedListQuestion li = new LinkedListQuestion();
 
         for(int i = 0; i < n; i++)
         {
@@ -130,3 +133,4 @@ class LinkedList
     }
 }
 
+*/
