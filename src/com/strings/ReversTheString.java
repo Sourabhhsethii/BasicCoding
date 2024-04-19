@@ -60,13 +60,35 @@ import java.util.Scanner;
 public class ReversTheString {
     public String solve(String A) {
 
-        return  "";
+        StringBuilder reverse = new StringBuilder();
+        reverse.append(A);
+        reverse.reverse();
+
+        StringBuilder reversedLine = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        for (int i =0;i < reverse.length();i++){
+
+
+            if(reverse.charAt(i) != ' ') {
+                sb.append(reverse.charAt(i));
+            } else  {
+                sb.reverse();
+                reversedLine.append(sb + " ");
+                sb = new StringBuilder();
+            }
+        }
+
+        sb.reverse();
+        reversedLine.append(sb);
+
+        return  String.valueOf(reversedLine).trim();
+
     }
 
     public static void main(String[] args) {
         ReversTheString  reverse= new ReversTheString();
         Scanner input = new Scanner(System.in);
-        String defaultString  = input.next();
+        String defaultString  = input.nextLine();
         System.out.println(reverse.solve(defaultString));
     }
 }
