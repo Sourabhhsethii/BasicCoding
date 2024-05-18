@@ -2,6 +2,10 @@ package com.java.certification.practice;
 
 public class SWITCH {
 
+    enum Suits{
+        HEART, SPADE, CLUB, DIAMOND
+    }
+
     public static void main(String[] args) {
         int x  = (int) (3* Math.random());
         switch (x){
@@ -45,5 +49,33 @@ public class SWITCH {
             case "200" -> System.out.println("200");
         }
         System.out.println(m);
+
+        // Return value frm switch statement using arrows
+        int test =1;
+        var res = switch (test){
+            case 1 -> "One";
+            default -> {throw new IllegalStateException("Bad value");}
+        };
+        System.out.println(res);
+
+        Suits s = Suits.DIAMOND;
+        var test2 = switch (s){
+            case CLUB -> "Clubs";
+            case DIAMOND -> "Diamond";
+            case HEART -> "Hearts";
+            case SPADE -> "Spade";
+        };
+        System.out.println(test2);
+
+        s = Suits.HEART;
+        System.out.println(switch (s){
+            case CLUB -> "Clubs";
+            case DIAMOND -> "Diamond";
+            case HEART -> "Hearts";
+            case SPADE -> "Spade";
+        });
     }
+
+
+
 }
