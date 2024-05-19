@@ -74,6 +74,15 @@ public class SWITCH {
             case HEART -> "Hearts";
             case SPADE -> "Spade";
         });
+
+        int test4 = 0;
+        System.out.println(switch (test4) {
+            case 0 :
+                System.out.println("Zeror");
+            case -1,-2,-3 : yield "small negative";
+            case 1,2,3 : yield "small positive";
+            default: throw new RuntimeException();
+        });
     }
 
 
