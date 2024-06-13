@@ -5,8 +5,6 @@ enum Conditional {
     UNKNOWN,
     FALSE;
 
-
-
     Conditional(int x) {
         System.out.println("Constructor Called with param");
     }
