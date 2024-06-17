@@ -13,6 +13,7 @@ public interface Test {
         test4();
         test5();
         test6();
+        test1();
     }
 
     static void test4(){
