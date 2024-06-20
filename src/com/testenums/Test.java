@@ -3,17 +3,17 @@ package com.testenums;
 public enum Test implements EnumInterface {
 
     Hello{
-        void get(int a){
+        public void get(int a){
             System.out.println("Test Hello");
         }
     },
     Bye{
-        void get(int a){
+        public void get(int a){
             System.out.println("Test Bye");
         }
     },
     Hi{
-        void get(int a){
+        public void get(int a){
             System.out.println("Test Hi");
         }
     };
