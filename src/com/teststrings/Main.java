@@ -1,5 +1,6 @@
 package com.teststrings;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class Main {
@@ -21,6 +22,29 @@ public class Main {
 
 
         System.out.println(s.toLowerCase().toUpperCase());
+
+        String textBlock = """
+                 A B      
+                B C
+                 D E
+                """;
+        System.out.println("strip ->" + textBlock.strip());
+        System.out.println("stripIndent ->" + textBlock.stripIndent());
+        System.out.println("trim =" + textBlock.trim());
+
+        String text  = " ABC ";
+        String blank = " ";
+        System.out.println("text->" + text.trim());
+        System.out.println("text->" + text.stripTrailing());
+        System.out.println("text->" + text.stripLeading());
+        System.out.println("text->" + text.indent(2));
+        System.out.println("text-> "+ blank.isEmpty());
+        System.out.println("text-> "+ blank.isBlank());
+
+        System.out.println(text.substring(1,2).toLowerCase(Locale.ROOT).length());
+
+
+        System.out.println(text.charAt(1));
 
         // Error Cases
 
