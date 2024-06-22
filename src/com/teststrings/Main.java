@@ -1,6 +1,5 @@
 package com.teststrings;
 
-import java.util.Arrays;
 import java.util.Locale;
 
 public class Main {
@@ -41,7 +40,7 @@ public class Main {
         System.out.println("text-> "+ blank.isEmpty());
         System.out.println("text-> "+ blank.isBlank());
 
-        System.out.println(text.substring(1,2).toLowerCase(Locale.ROOT).length());
+        System.out.println(text.substring(1,2).toLowerCase().length());
 
 
         System.out.println(text.charAt(1));
