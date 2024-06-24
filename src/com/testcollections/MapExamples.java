@@ -10,8 +10,8 @@ public class MapExamples {
         map.put("sam","test");
         map.values().forEach(System.out::println);
 
-        map.replace("sam","value");
-        map.merge("sam"," test", (x,y)-> "   " +x+y);
+        System.out.println(" replace -> " +map.replace("sam","value"));
+        System.out.println( " merge -> " +map.merge("sam"," test", (x,y)-> "   " +x+y));
         map.merge(null," test", (x,y)-> " " +x+y);
         map.merge(null," test2", (x,y)-> "  "+x+y);
         System.out.println(map);
