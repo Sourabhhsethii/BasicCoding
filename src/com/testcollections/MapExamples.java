@@ -19,6 +19,12 @@ public class MapExamples {
         map.replaceAll((x,y)-> " replace all ->"+x+y);
         System.out.println(map);
 
+        for (var entry: map.entrySet()){
+            System.out.println( " < " +entry.getKey()  + " \t :  \t" + entry.getValue() + ">");
+        }
+
+        map.forEach((key,value) -> System.out.println(key + " : " + value));
+
 
     }
 }
