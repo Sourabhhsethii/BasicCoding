@@ -25,6 +25,14 @@ public class MapExamples {
 
         map.forEach((key,value) -> System.out.println(key + " : " + value));
 
+        System.out.println(map.putIfAbsent("test","putIfAbsent"));
+        System.out.println(map.putIfAbsent("test","putIfAbsent"));
+        System.out.println(map);
+
+        System.out.println(map.getOrDefault("t","getOrDefault"));
+        System.out.println(map.getOrDefault("t","getOrDefault"));
+        System.out.println(map);
+
 
     }
 }
