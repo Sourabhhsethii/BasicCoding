@@ -5,7 +5,6 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.spi.TimeZoneNameProvider;
 
 public class Zone {
     public static void main(String[] args) {
