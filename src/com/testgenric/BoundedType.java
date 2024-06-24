@@ -13,8 +13,8 @@ public class BoundedType {
         List<? extends ClassB>  test3 = new ArrayList<ClassB>();
         List<? extends ClassB>  test4 = new ArrayList<ClassC>();
 
-        List<? super Exception> ex = new ArrayList<Object>();
-        ex.add(new FileNotFoundException());
+        List<? super Exception> ex = new ArrayList<Exception>();
+        ex.add(new Exception());
         ex.add(new IOException());
         ex.add(new Exception());
         System.out.println(ex
