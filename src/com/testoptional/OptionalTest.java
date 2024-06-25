@@ -17,12 +17,19 @@ public class OptionalTest {
 
 
     public static void main(String... args) {
-        var av = takeAverage(1,2,3);
+        var av = takeAverage();
         if(av.isEmpty())
             System.out.println("Its Empty");
 
         if(av.isPresent())
             System.out.println("Its avg : " + av.get());
+
+        System.out.println(av.orElse(null));
+        System.out.println(av.orElseGet(()-> {
+            return 3d;
+        }));
+
+        System.out.println(av.orElseThrow(()-> new IllegalArgumentException()));
 
     }
 }
