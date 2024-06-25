@@ -31,5 +31,7 @@ public class OptionalTest {
 
         System.out.println(av.orElseThrow(()-> new IllegalArgumentException()));
 
+        System.out.println(av.orElseThrow());
+
     }
 }
