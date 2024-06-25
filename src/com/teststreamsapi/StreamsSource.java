@@ -3,6 +3,8 @@ package com.teststreamsapi;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamsSource {
@@ -13,10 +15,27 @@ public class StreamsSource {
         var stream2 = Arrays.asList(1,2,3).stream();
         System.out.println(stream2.count());
 
-        var stream3 = Stream.of(1,2,3);
+        var stream3 = Stream.of(2,2,3);
         System.out.println(stream3.max(Comparator.comparingInt(x -> x)));
 
-        var stream4 = List.copyOf(List.of(1,2,3)).stream();
-        System.out.println(stream4.parallel().findAny());
+        var stream4 = List.copyOf(List.of(2,2,3)).stream();
+        // System.out.println(stream4.parallel().findAny()); 
+
+        // stream4.map(x->x*2).forEach(System.out::println);
+
+        var testSteams = stream4.parallel().collect(TreeSet::new,TreeSet::add,TreeSet::addAll);
+        System.out.println(testSteams);
+        System.out.println(testSteams.stream().count());
+
+        var testStream2 = testSteams.stream().collect(Collectors.toMap(x-> {
+            return x;
+        },y->y));
+        System.out.println(testStream2);
+
+        // Stream Pipelines
+        // foreach -> Consumer
+        // map -> Function
+        // Filer -> Predicate
+        testSteams.stream().map(x->Integer.valueOf((Integer) x)*2).filter(x-> x>2).skip(1).limit(1).forEach(System.out::println);
     }
 }
