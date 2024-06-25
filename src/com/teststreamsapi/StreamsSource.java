@@ -37,5 +37,24 @@ public class StreamsSource {
         // map -> Function
         // Filer -> Predicate
         testSteams.stream().map(x->Integer.valueOf((Integer) x)*2).filter(x-> x>2).skip(1).limit(1).forEach(System.out::println);
+
+        var list7 = List.of("Lets", "Do","Something");
+        var list8 = List.of("Lets", "Do","Something");
+        var list9 = List.of(1,2,3,4,5,6,7,8);
+
+        var list10 = List.of(list7,list8,list9);
+        list10.stream().peek(x-> {
+            System.out.println("peek -> " + x);
+        }).flatMap(x-> x.stream()).forEach(System.out::println);
+        System.out.println( "Size " + list10.size());
+
+        var list11 = list10.stream().flatMap(z->z.stream())
+                .collect(Collectors.toList());
+        System.out.println(list11);
+
+        List.of(1,2,3).stream().peek(System.out::println).sorted(Comparator.reverseOrder()).forEach(System.out::print);
+
+
+
     }
 }
