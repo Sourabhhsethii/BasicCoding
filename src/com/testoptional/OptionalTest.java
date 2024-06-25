@@ -29,9 +29,10 @@ public class OptionalTest {
             return 3d;
         }));
 
+        System.out.println(av.orElseThrow());
         System.out.println(av.orElseThrow(()-> new IllegalArgumentException()));
 
-        System.out.println(av.orElseThrow());
+
 
     }
 }
