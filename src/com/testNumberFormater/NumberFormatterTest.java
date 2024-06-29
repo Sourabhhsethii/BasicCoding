@@ -20,10 +20,13 @@ public class NumberFormatterTest {
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
         System.out.println(LocalDateTime.now().format(dateTimeFormatter));
+        System.out.println(dateTimeFormatter.format(LocalDateTime.now()));
 
         DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("MMMM dd yyyy 'at' hh ss");
         System.out.println(LocalDateTime.now().format(dateTimeFormatter1));
 
+        // Locale.setDefault(Locale.Category.FORMAT,Locale.CANADA);
+        System.out.println(Locale.getDefault());
         Locale locale = new Locale("pl", "PL");
         ResourceBundle exampleBundle = ResourceBundle.getBundle("com.testNumberFormater.ExampleResource", locale);
         System.out.println(exampleBundle.getString("continueButton"));
