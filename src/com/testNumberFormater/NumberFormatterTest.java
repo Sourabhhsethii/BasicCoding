@@ -30,5 +30,6 @@ public class NumberFormatterTest {
         Locale locale = new Locale("pl", "PL");
         ResourceBundle exampleBundle = ResourceBundle.getBundle("com.testNumberFormater.ExampleResource", locale);
         System.out.println(exampleBundle.getString("continueButton"));
+        System.out.println(exampleBundle.getString("helloLabel"));
     }
 }
