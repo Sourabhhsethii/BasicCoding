@@ -1,6 +1,7 @@
 package com.testNumberFormater;
 
 import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -34,5 +35,8 @@ public class NumberFormatterTest {
 
         DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern(" 'Todays Date is -> 'MMMM dd yyyy 'at' hh ss");
         System.out.println(LocalDateTime.now().format(dateTimeFormatter2));
+
+        String format = exampleBundle.getString("helloByName");
+        System.out.println(MessageFormat.format(format,"Sourabh","Shrey"));
     }
 }
