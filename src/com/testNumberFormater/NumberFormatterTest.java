@@ -50,5 +50,6 @@ public class NumberFormatterTest {
         System.out.println(props.get("uio"));
 
         System.out.println(ResourceBundle.getBundle("com.testNumberFormater.ExampleResource").getLocale().getDisplayLanguage().toLowerCase());
+        exampleBundle.keySet().stream().forEach(System.out::println);
     }
 }
