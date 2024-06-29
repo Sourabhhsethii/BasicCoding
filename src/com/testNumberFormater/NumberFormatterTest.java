@@ -48,5 +48,7 @@ public class NumberFormatterTest {
         System.out.println(props.getProperty("def"));
         System.out.println(props.getProperty("uio","test test"));
         System.out.println(props.get("uio"));
+
+        System.out.println(ResourceBundle.getBundle("com.testNumberFormater.ExampleResource").getLocale().getDisplayLanguage().toLowerCase());
     }
 }
