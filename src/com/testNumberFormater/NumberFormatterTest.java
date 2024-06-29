@@ -31,5 +31,8 @@ public class NumberFormatterTest {
         ResourceBundle exampleBundle = ResourceBundle.getBundle("com.testNumberFormater.ExampleResource", locale);
         System.out.println(exampleBundle.getString("continueButton"));
         System.out.println(exampleBundle.getString("helloLabel"));
+
+        DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern(" 'Todays Date is -> 'MMMM dd yyyy 'at' hh ss");
+        System.out.println(LocalDateTime.now().format(dateTimeFormatter2));
     }
 }
