@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class NumberFormatterTest {
@@ -38,5 +39,14 @@ public class NumberFormatterTest {
 
         String format = exampleBundle.getString("helloByName");
         System.out.println(MessageFormat.format(format,"Sourabh","Shrey"));
+
+        var props = new Properties();
+        props.setProperty("abc","test1");
+        props.setProperty("def","test2");
+
+        System.out.println(props.getProperty("abc"));
+        System.out.println(props.getProperty("def"));
+        System.out.println(props.getProperty("uio","test test"));
+        System.out.println(props.get("uio"));
     }
 }
