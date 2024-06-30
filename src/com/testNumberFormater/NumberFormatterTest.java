@@ -8,6 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class NumberFormatterTest {
     public static void main(String[] args) {
@@ -52,9 +55,12 @@ public class NumberFormatterTest {
         System.out.println(ResourceBundle.getBundle("com.testNumberFormater.ExampleResource").getLocale().getDisplayLanguage().toLowerCase());
         exampleBundle.keySet().stream().forEach(System.out::println);
 
-        new Locale.Builder().setLanguage("it").build();
+        var locale1 = new Locale.Builder().setLanguage("it").build();
         var formatter = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
-        double d = 123_456.789;
+        double d = 123_456.989;
+        System.out.println(locale1.getDisplayLanguage());
+        System.out.println(locale1.getDisplayName());
+        System.out.println(locale1.getDisplayVariant());
         System.out.println(formatter.format(d));
     }
 }
