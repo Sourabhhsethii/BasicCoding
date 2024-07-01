@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println(" Exception Examples ");
-
+        var effectivelyFinal  = new EffectivelyFinal();
+        // effectivelyFinal is effectively final.
         try {
             new Exception();
         } catch (Exception exception){
@@ -17,7 +18,7 @@ public class Main {
             System.out.println(e);
         }
 
-        try(var test = new MyTryException();
+        try(effectivelyFinal;var test = new MyTryException();
             var test2 = new MyTryException2();) {
             System.out.println("Started Try Block");
 
@@ -32,6 +33,8 @@ public class Main {
         } finally {
             System.out.println("Tested Completed!!");
         }
+
+        // effectivelyFinal = null;
 
     }
 }
