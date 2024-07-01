@@ -36,5 +36,28 @@ public class Main {
         // uncomment below line; it will show you the example about what EffectivelyFinal
         // effectivelyFinal = null;
 
+
+        /**
+         *  Output
+         *
+         *  Exception Examples
+         * Started Try Block
+         * Closing Try Block
+         * [MyTryException2] Closing MyTryException2
+         * Closing MyTryException
+         * File Not Found!!
+         * [MyTryException] : File Not Found!!
+         * Tested Completed!!
+         * java.lang.NullPointerException
+         * 	at com.testexception.Main.main(Main.java:26)
+         * 	Suppressed: java.io.FileNotFoundException: File Not Found!!
+         * 		at com.testexception.MyTryException2.close(MyTryException2.java:12)
+         * 		at com.testexception.Main.main(Main.java:21)
+         * 	Suppressed: java.io.FileNotFoundException: [MyTryException] : File Not Found!!
+         * 		at com.testexception.MyTryException.close(MyTryException.java:11)
+         * 		at com.testexception.Main.main(Main.java:21)
+         *
+         */
+
     }
 }
