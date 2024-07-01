@@ -25,7 +25,9 @@ public class Main {
             throw new NullPointerException();
             // UnReachable Block after this...
         } catch (Exception e) {
-            System.out.println("Exception -> " + e.getMessage());
+
+            for (var th : e.getSuppressed())
+                System.out.println(th.getMessage());
             e.printStackTrace();
         } finally {
             System.out.println("Tested Completed!!");
