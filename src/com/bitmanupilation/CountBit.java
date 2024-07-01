@@ -6,7 +6,7 @@ public class CountBit {
         System.out.println(countSetBits(0b111111100101));
     }
 
-    static int countSetBits(int number){
+    static int countSetBits(int number) {
 
         int count = 0;
 
