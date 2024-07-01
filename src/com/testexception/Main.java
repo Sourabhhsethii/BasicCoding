@@ -31,9 +31,11 @@ public class Main {
         } catch (Exception e) {
             for (var th : e.getSuppressed())
                 System.out.println(th.getMessage());
-            e.printStackTrace();
+            // e.printStackTrace();
         } finally {
-            System.out.println("Tested Completed!!");
+             System.out.println("Tested Completed!!");
+            throw new RuntimeException();
+            // UnReachable Block after this ... ...
         }
         // uncomment below line; it will show you the example about what EffectivelyFinal
         // effectivelyFinal = null;
