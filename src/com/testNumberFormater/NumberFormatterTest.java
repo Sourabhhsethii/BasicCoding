@@ -81,5 +81,15 @@ public class NumberFormatterTest {
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
         System.out.println(ZonedDateTime.now().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)));
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
+
+        var test = NumberFormat.getCompactNumberInstance(Locale.getDefault(), NumberFormat.Style.LONG);
+
+        var test1 = NumberFormat.getCompactNumberInstance(Locale.getDefault(), NumberFormat.Style.SHORT);
+
+      //  var test2 = NumberFormat.getCompactNumberInstance(Locale.getDefault());
+        System.out.println(test.format(10.2d));
+        System.out.println(test1.format(10.2d));
+
+        System.out.println(MessageFormat.format("helloByName","pretty"));
     }
 }
