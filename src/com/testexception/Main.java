@@ -22,10 +22,12 @@ public class Main {
             var test = new MyTryException();
             var test2 = new MyTryException2(); ) {
             System.out.println("Started Try Block");
-
+            // uncomment below line to check that below lines will not work.
+            // System.exit(0);
             System.out.println("Closing Try Block");
             throw new NullPointerException();
             // UnReachable Block after this...
+
         } catch (Exception e) {
             for (var th : e.getSuppressed())
                 System.out.println(th.getMessage());
